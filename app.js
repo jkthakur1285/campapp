@@ -156,7 +156,7 @@ function isLoggedIn(req, res, next){
     }
     res.redirect("/login")
 }
-const PORT=process.env.PORT;
+const PORT=process.env.PORT||1700;
 
 app.listen(PORT, function(){
 	console.log("server has started at port no "+PORT)

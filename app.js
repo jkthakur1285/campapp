@@ -36,6 +36,15 @@ app.use(function(req, res, next){
 
 mongoose.connect("mongodb://localhost/YelpCamp");
 
+mongoose.connect("mongodb+srv://admin:1234@cluster0.d6b2r.mongodb.net/YelpCamp?retryWrites=true&w=majority", {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  }).then(res=>{
+          console.log("DB Connected!")
+  }).catch(err => {
+    console.log(Error, err.message);
+  })
 
 //var seedDB = require("./seeds")
 //seedDB()
@@ -147,8 +156,8 @@ function isLoggedIn(req, res, next){
     }
     res.redirect("/login")
 }
+const PORT=process.env.PORT;
 
-
-app.listen(2000, function(){
-	console.log("server has started at port no 2000");
+app.listen(PORT, function(){
+	console.log("server has started at port no "+PORT)
 });

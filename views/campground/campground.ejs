@@ -1,0 +1,22 @@
+<%-include("../partials/header")%>
+
+<div class="container-fluid">
+<div class="row">
+    <% cg.forEach(function(camp){%>   
+    
+    <div class="col-12 col-md-3">
+        <div class="card" style="width: 18rem;">
+            <img src="<%=camp.image%>" class="card-img-top">
+            <div class="card-body">
+            <h5 class="card-title"><%=camp.name%></h5>
+            <p class="card-text"><%=camp.description.substring(0,15)%>...</p>
+            <a href="/campground/<%=camp._id%>" class="btn btn-primary">more info</a>
+            </div>
+        </div>
+    </div>
+        <%})%>
+      
+    </div>
+</div>
+
+<%-include("../partials/footer")%>

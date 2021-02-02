@@ -1,0 +1,19 @@
+<%-include("../partials/header")%>
+<div class="container">
+    <div class="jumbotron">
+        
+        <form action="/campground/<%=camp._id%>/comment" method="post">
+    <div class="form-group">
+        <label for="text">Add new comment to <strong><%=camp.name%></strong></label>
+        <input name="comment[text]" type="text" class="form-control" id="text" placeholder="Text">
+    </div>
+    <div class="form-group">
+        <label for="author">Author</label>
+        <input name="comment[author]" type="text" class="form-control" id="author" placeholder="author">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<%-include("../partials/footer")%>
